@@ -78,27 +78,27 @@ class Registration_model extends CI_Model {
     	return ($query->num_rows() == 0) ? TRUE : FALSE;
     }
 
-    public function insert($postdata) {
+    public function insert() {
     	$client = $this->client_info();
 
-        $filename = $postdata["imei_id"] . '-' . date('YmsHis');
+        $filename = $this->input->post('imei') . '-' . date('YmsHis');
         $target_dir = "assets/uploads/";
         $target_file = $target_dir . basename($_FILES["storeReceipt"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         
         $new_file = $filename . '.' . $imageFileType;
 
-        $data = [
-    		'first_name' => $postdata["first_name"],
-    		'middle_name' => $postdata["middle_name"],
-    		'last_name' => $postdata["last_name"],
-    		'email' => $postdata["email"],
-            'address' => $postdata["address"],
-    		'contact_number' => $postdata["contact_number"],
-            'phone_model' => $postdata["phone_model"],
-    		'imei_id' => $this->get_imei_id($postdata["imei_id"]),
-            'purchase_date' => $postdata["purchase_date"],
-            'store_name' => $postdata["store_name"],
+    	$data = [
+    		'first_name' => ucwords(strtolower($this->input->post('firstName'))),
+    		'middle_name' => ucwords(strtolower($this->input->post('middleName'))),
+    		'last_name' => ucwords(strtolower($this->input->post('lastName'))),
+    		'email' => $this->input->post('email'),
+            'address' => $this->input->post('address'),
+    		'contact_number' => $this->input->post('contactNumber'),
+            'phone_model' => $this->input->post('phoneModel'),
+    		'imei_id' => $this->get_imei_id($this->input->post('imei')),
+            'purchase_date' => $this->input->post('purchaseDate'),
+            'store_name' => $this->input->post('storeName'),
             'store_receipt' => $new_file,
     		'agent' => $client['agent'],
     		'platform' => $client['platform'],
@@ -111,7 +111,7 @@ class Registration_model extends CI_Model {
 		$this->db->insert('registration', $data);
         $registrationid = $this->db->insert_id();
 
-        // Upload image
+        //Upload image
         move_uploaded_file($_FILES['storeReceipt']['tmp_name'], $target_dir.$new_file);
 
         $code = [

@@ -63,42 +63,38 @@ class Registration extends CI_Controller {
 
     public function is_valid_imei($value) {
     	if (!$value) {
-            echo json_encode('IMEI is required');
-            // return FALSE;
+            $this->form_validation->set_message('is_valid_imei', '{field} is required.');
+            return FALSE;
         } elseif ($this->r->valid_imei($value) === FALSE) {
-        	// $this->form_validation->set_message('is_valid_imei', 'Your {field} is not registered on realme Device.');
-			echo json_encode('Your IMEI is not registered on realme Device');
-            // return FALSE;
+        	$this->form_validation->set_message('is_valid_imei', 'Your {field} is not registered on realme Device.');
+			
+            return FALSE;
         } elseif ($this->r->is_registered_imei($value) === FALSE) {
-        	// $this->form_validation->set_message('is_valid_imei', '{field} is already registered.');
-			echo json_encode('Your IMEI is already registered.');
-            // return FALSE;
+        	$this->form_validation->set_message('is_valid_imei', '{field} is already registered.');
+			
+            return FALSE;
         }
         else {
-			// return TRUE;
-        	echo json_encode('Success');
+        	return TRUE;
         }
     }
 
-    public function is_valid_image() {
+    public function is_valid_image($value) {
     	if ($_FILES['storeReceipt']) {
             $target_dir = "uploads/";
             $target_file = $target_dir . basename($_FILES["storeReceipt"]["name"]);
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
             $extensions_arr = array("jpg","jpeg","png");
-            if(in_array($imageFileType,$extensions_arr) ){
-				echo json_encode('Success');
+            if( in_array($imageFileType,$extensions_arr) ){
                 return TRUE;
             }
             else {
-                // $this->form_validation->set_message('is_valid_image', '{field} must be a valid image.');
-				echo json_encode('Store Receipt must be a valid image.');
+                $this->form_validation->set_message('is_valid_image', '{field} must be a valid image.');
                 return FALSE;
             }
         }
         else {
-            // $this->form_validation->set_message('is_valid_image', 'Please upload {field}.');
-			echo json_encode('Please upload Store Receipt.');
+            $this->form_validation->set_message('is_valid_image', 'Please upload {field}.');
             return FALSE;
         }
     }
@@ -109,31 +105,76 @@ class Registration extends CI_Controller {
 		$body['devices'] = $this->r->get_devices();
 		$footer['script'] = array('registration');
         $body['current_time'] = $this->r->PH_Date();
-
-		$this->load->view('_shared/onheader', $header);
-		$this->load->view('_page/registration/index', $body);
-		$this->load->view('_shared/onfooter', $footer);
-	}
-
-	public function submit_registration()
-	{
-		$postdata = array(
-			'first_name' => ucwords(strtolower($this->input->post('firstName'))),
-    		'middle_name' => ucwords(strtolower($this->input->post('middleName'))),
-    		'last_name' => ucwords(strtolower($this->input->post('lastName'))),
-    		'email' => $this->input->post('email'),
-            'address' => $this->input->post('address'),
-    		'contact_number' => $this->input->post('contactNumber'),
-            'phone_model' => $this->input->post('phoneModel'),
-    		'imei_id' => $this->input->post('imei'),
-            'purchase_date' => $this->input->post('purchaseDate'),
-            'store_name' => $this->input->post('storeName'),
-			'storeReceipt' => $this->input->post('storeReceipt')
-		);
-
-		$id = $this->r->insert($postdata);
-		
-		echo json_encode($id);
+        
+		if ($this->input->post()) {
+			$this->form_validation->set_rules('firstName', 'First Name', 'trim|required|xss_clean',
+				array(
+					'required' => '{field} is required.'
+				));
+            $this->form_validation->set_rules('middleName', 'Middle Name', 'trim|xss_clean');
+            $this->form_validation->set_rules('lastName', 'Last Name', 'trim|required|xss_clean',
+        		array(
+					'required' => '{field} is required.'
+				));
+            $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|xss_clean');
+            $this->form_validation->set_rules('address', 'Home Address', 'trim|required|xss_clean',
+        		array(
+					'required' => '{field} is required.'
+				));
+            $this->form_validation->set_rules('lastName', 'Last Name', 'trim|required|xss_clean',
+        		array(
+					'required' => '{field} is required.'
+				));
+            $this->form_validation->set_rules('contactNumber', 'Contact Number', 'trim|required|is_numeric|xss_clean',
+        		array(
+					'required' => '{field} is required.',
+					'is_numeric' => '{field} must be numeric.',
+					'is_unique' => '{field} is already used.'
+				));
+            $this->form_validation->set_rules('phoneModel', 'Phone Model', 'trim|required|xss_clean',
+        		array(
+					'required' => 'Please select {field}.'
+				));
+            $this->form_validation->set_rules('imei', 'IMEI Number', 'trim|callback_is_valid_imei|xss_clean');
+            $this->form_validation->set_rules('purchaseDate', 'Date of Purchase', 'trim|required|callback_is_valid_date|xss_clean',
+        		array(
+					'required' => '{field} is required.'
+				));
+            $this->form_validation->set_rules('storeName', 'Store Name', 'trim|required|xss_clean',
+        		array(
+					'required' => '{field} is required.'
+				));
+            $this->form_validation->set_rules('storeReceipt', 'Store Receipt', 'trim|callback_is_valid_image|xss_clean',
+        		array(
+					'required' => '{field} is required.'
+				));
+            $this->form_validation->set_rules('terms', 'Terms and Conditions', 'trim|required|xss_clean',
+        		array(
+					'required' => 'Please check the {field}.'
+				));
+            $this->form_validation->set_rules('dataPrivacy', 'Data Privacy', 'trim|required|xss_clean',
+        		array(
+					'required' => 'Please check the {field}.'
+				));
+			$this->form_validation->set_rules('dataAgreement', 'Agreement', 'trim|required|xss_clean',
+        		array(
+					'required' => 'Please accept the {field}.'
+				));
+            if ($this->form_validation->run()) {
+            	$id = $this->r->insert();
+            	redirect('registration/send_code/'.$id);
+            }
+            else {
+            	$this->load->view('_shared/onheader', $header);
+				$this->load->view('_page/registration/index', $body);
+				$this->load->view('_shared/onfooter', $footer);
+            }
+		}
+		else {
+			$this->load->view('_shared/onheader', $header);
+			$this->load->view('_page/registration/index', $body);
+			$this->load->view('_shared/onfooter', $footer);
+		}
 	}
 
 	public function is_valid_verification($value, $id) {
