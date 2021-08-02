@@ -164,7 +164,7 @@ $(document).ready(function(){
 		else if($('#storeName').val() == ""){
 			Swal.fire(
 				'Warning!',
-				'Store receipt is required!',
+				'Store name and branch is required!',
 				'warning'
 			)
 		}
@@ -183,7 +183,7 @@ $(document).ready(function(){
 			)
 		}
 		else{
-
+			$('#btnsubmit').attr('disabled', true);
 			// Image upload
 				$.ajax({
 					url: '<?php echo base_url()?>registration/is_valid_image/',
@@ -211,7 +211,7 @@ $(document).ready(function(){
 												
 													success: function(data){
 														$("#registrationForm").trigger("reset");
-
+														
 														Swal.fire({
 														title: "You're halfway there!",
 														text: "Please verify your registration",
