@@ -1,90 +1,90 @@
 @font-face {
-    font-family: "OpenSans";
-    src: url("../../fonts/Open_Sans/OpenSans-Regular.ttf");
+	font-family: "OpenSans";
+	src: url("../../fonts/Open_Sans/OpenSans-Regular.ttf");
 }
 
 @font-face {
-    font-family: "Century Gothic";
-    src: url("../../fonts/CenturyGothicRegular.ttf");
+	font-family: "Century Gothic";
+	src: url("../../fonts/CenturyGothicRegular.ttf");
 }
 
 .lang-en {
-    font-family: "Century Gothic", sans-serif, Arial;
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: rgb(64, 64, 64);
+	font-family: "Century Gothic", sans-serif, Arial;
+	font-size: 13px;
+	letter-spacing: 1px;
+	color: rgb(64, 64, 64);
 }
 
 body {
-    background-image: url("../../img/background.png");
-    height: 100%;
-    background-repeat: no-repeat repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+	background-image: url("../../img/background.png");
+	height: 100%;
+	background-repeat: no-repeat repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 .realme-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 10px;
-    background-color: transparent;
-    /*box-shadow: 6px 6px rgba(204, 204, 204, .3);*/
-    border: none;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 10px;
+	background-color: transparent;
+	/*box-shadow: 6px 6px rgba(204, 204, 204, .3);*/
+	border: none;
 }
 
 .realme-form .body {
-    padding: 30px 10px 10px;
-    /*background-color: #f7c41d;*/
-    background-color: transparent;
+	padding: 30px 10px 10px;
+	/*background-color: #f7c41d;*/
+	background-color: transparent;
 }
 
-@media(max-width:600px) {
-    .realme-form {
-        margin: 0;
-        border: none;
-        box-shadow: none
-    }
+@media (max-width: 600px) {
+	.realme-form {
+		margin: 0;
+		border: none;
+		box-shadow: none;
+	}
 }
 
 .form-control {
-    border-radius: 0;
-    padding: 10px 20px;
-    height: calc(2.25rem + 8px)
+	border-radius: 0;
+	padding: 10px 20px;
+	height: calc(2.25rem + 8px);
 }
 
 .custom-file,
 .custom-file-label,
 .custom-select {
-    border-radius: 0;
-    padding: 8px 20px;
-    height: calc(2.25rem + 8px);
+	border-radius: 0;
+	padding: 8px 20px;
+	height: calc(2.25rem + 8px);
 }
 
 .custom-file-label::after {
-    padding: 8px 20px;
-    height: calc(2.25rem + 6px);
+	padding: 8px 20px;
+	height: calc(2.25rem + 6px);
 }
 
 .line {
-    height: 1px;
-    margin: 20px 0 15px;
-    background-color: rgba(204, 204, 204, .7);
+	height: 1px;
+	margin: 20px 0 15px;
+	background-color: rgba(204, 204, 204, 0.7);
 }
 
 .btn-custom {
-    display: block;
-    width: 100%;
-    background-color: #ffc915;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 0;
-    padding: 10px;
-    border: 2px solid #ffc915;
-    color: #333;
+	display: block;
+	width: 100%;
+	background-color: #ffc915;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 0;
+	padding: 10px;
+	border: 2px solid #ffc915;
+	color: #333;
 }
 
 .btn-custom:hover,
 .btn-custom:focus {
-    background-color: #fff;
+	background-color: #fff;
 }
