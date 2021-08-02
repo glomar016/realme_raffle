@@ -1,0 +1,22 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} realmephpromos\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://realmephpromos.com/$1 [R,L]
+RewriteOptions inherit
+RewriteEngine on
+Header set content-Security-Policy: upgrade-insecure-requests
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+RewriteCond %{HTTP_HOST} ^realmephpromos\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.realmephpromos\.com$
+RewriteRule ^preorder$ "http\:\/\/sbs\.hbsi\.ph\:8091\/preorder" [R=301,L]
+

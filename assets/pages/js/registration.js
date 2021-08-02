@@ -1,0 +1,1 @@
+$(document).ready(function(){$('form').submit(function(){$('#btnsubmit').attr('disabled','disabled');$('#btnsubmit').addClass('disabled')});$("#storeReceipt.custom-file-input").on("change",function(){var fileName=$(this).val().split("\\").pop();$(this).siblings(".custom-file-label").addClass("selected").html(fileName)})})
