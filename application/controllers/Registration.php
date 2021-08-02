@@ -7,6 +7,7 @@ class Registration extends CI_Controller {
         parent::__construct();
         $this->load->helper(array('url', 'form', 'security'));
         $this->load->library('form_validation');
+		$this->load->library('upload');
         $this->load->model('Registration_model', 'r');
         $config = array(
             'protocol' => "smtp",
@@ -86,9 +87,21 @@ class Registration extends CI_Controller {
             $target_file = $target_dir . basename($_FILES["storeReceipt"]["name"]);
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
             $extensions_arr = array("jpg","jpeg","png");
-            if(in_array($imageFileType,$extensions_arr) ){
+
+			
+            if(in_array($imageFileType, $extensions_arr) ){
+				$filename = $this->input->post('imei') . '-' . date('YmsHis');
+				$target_dir = "assets/uploads/";
+				$target_file = $target_dir . basename($_FILES["storeReceipt"]["name"]);
+				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+				
+				$new_file = $filename . '.' . $imageFileType;
+
+				//Upload image
+        		move_uploaded_file($_FILES['storeReceipt']['tmp_name'], $target_dir.$new_file);
+
 				echo json_encode('Success');
-                return TRUE;
+                // return TRUE;
             }
             else {
                 // $this->form_validation->set_message('is_valid_image', '{field} must be a valid image.');
