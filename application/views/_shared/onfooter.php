@@ -1,7 +1,8 @@
+		<img draggable="false" class="mechanics" src="<?php echo base_url('assets/img/Mechanics-600x680.jpg'); ?>">
 		</div>
 		<div class="footer">
-		    <img src="<?php echo base_url('assets/img/Agreement.png'); ?>" style="width: 100%; max-width: 600px">
-		    <img src="<?php echo base_url('assets/img/mechanics.jpg'); ?>" style="width: 100%; max-width: 600px">
+		    
+		    <!-- <img src="<?php echo base_url('assets/img/mechanics.jpg'); ?>" style="width: 100%; max-width: 600px"> -->
 		</div>
 	</div>
 
@@ -9,7 +10,7 @@
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Terms and Conditions</h5>
+					<h5 class="modal-title">Tarms and Conditions</h5>
 				</div>
 				<div class="modal-body" style="max-height: 450px; overflow-y: auto;">
 					<?php $this->load->view('_shared/terms'); ?>
@@ -45,6 +46,7 @@
 		foreach($script as $s) {
 	?>
 	<script src="<?php echo base_url('assets/pages/js/'.$s.'.js'); ?>"></script>
+	<!-- <script src="<?php echo base_url('assets/pages/js/scroll.js'); ?>"></script> -->
 	<?php
 		}
 	}
