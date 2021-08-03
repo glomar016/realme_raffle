@@ -56,9 +56,23 @@
 	</div>
 	<div class="form-group">
 		<label for="storeName">Store Name and Branch <span class="text text-danger">*</span></label>
+		<select class="custom-select" id="storeName" name="storeName">
+		    <option value="" <?php echo set_select('storeName', '', TRUE); ?> >- Select Store Name and Branch -</option>
+		    <?php if ($stores) {
+		        foreach ($stores as $s) {
+		            ?>
+		    <option value="<?php echo $s['id']; ?>" <?php echo set_select('storeName', $s['id']); ?> ><?php echo $s['store_name']; ?></option>
+		            <?php
+		        }
+		    } ?>
+		</select>
+		<?php echo form_error('phoneModel', '<span class="text-danger">', '</span>'); ?>
+	</div>
+	<!-- <div class="form-group">
+		<label for="storeName">Store Name and Branch <span class="text text-danger">*</span></label>
 		<input type="text" class="form-control" id="storeName" name="storeName" value="<?php echo set_value('storeName'); ?>">
 		<?php echo form_error('storeName', '<span class="text-danger">', '</span>'); ?>
-	</div>
+	</div> -->
 	<div class="form-group">
 		<label for="storeReceipt">Photo of Official Receipt or E-Commerce Order Details Screenshot <span class="text text-danger">*</span></label>
 		<div class="custom-file">
@@ -99,9 +113,15 @@
 <script src="<?php echo base_url()?>assets/jquery/jquery-3.5.1.min.js"></script>
 <script src="<?php echo base_url()?>assets/jquery/moment.min.js"></script>
 <script src="<?php echo base_url()?>assets/jquery/sweetalert2@11.js"></script>
+<!-- <script src="<?php echo base_url()?>assets/pages/js/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script> -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <script>
 $(document).ready(function(){
-
+	$('select').select2({
+	});
+	
 
 	$('#registrationForm').on('submit', function(e){
 		e.preventDefault()
@@ -110,8 +130,7 @@ $(document).ready(function(){
 		let form = $('#registrationForm').serialize();
 		console.log($("#storeReceipt").val())
 
-		
-
+	
 		if($('#firstName').val() == ""){
 			Swal.fire(
 				'Warning!',
@@ -164,7 +183,7 @@ $(document).ready(function(){
 		else if($('#storeName').val() == ""){
 			Swal.fire(
 				'Warning!',
-				'Store receipt is required!',
+				'Store name and branch is required!',
 				'warning'
 			)
 		}
@@ -182,8 +201,29 @@ $(document).ready(function(){
 				'warning'
 			)
 		}
+		else if(!$('#terms').is(":checked")){
+				Swal.fire(
+				'Warning!',
+				'Terms and conditions are required!',
+				'warning'
+			)
+		}
+		else if(!$('#dataPrivacy').is(":checked")){
+				Swal.fire(
+				'Warning!',
+				'Data privacy is required!',
+				'warning'
+			)
+		}
+		else if(!$('#dataAgreement').is(":checked")){
+				Swal.fire(
+				'Warning!',
+				'Data agreement is required!',
+				'warning'
+			)
+		}
 		else{
-
+			$('#btnsubmit').attr('disabled', true);
 			// Image upload
 				$.ajax({
 					url: '<?php echo base_url()?>registration/is_valid_image/',
@@ -211,7 +251,7 @@ $(document).ready(function(){
 												
 													success: function(data){
 														$("#registrationForm").trigger("reset");
-
+														
 														Swal.fire({
 														title: "You're halfway there!",
 														text: "Please verify your registration",
@@ -234,6 +274,7 @@ $(document).ready(function(){
 												data,
 												'warning'
 											)
+											$('#btnsubmit').attr('disabled', false);
 										}
 									}
 								// ajax closing tag

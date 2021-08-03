@@ -1,0 +1,5 @@
+CREATE TABLE store_names
+( id INT(11) NOT NULL AUTO_INCREMENT,
+  store_name VARCHAR(500) NULL,
+  CONSTRAINT store_id_pk PRIMARY KEY (id)
+);

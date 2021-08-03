@@ -17,7 +17,7 @@
 <p>- Provincial Winners (Delivery of Runto Technology Inc through authorized personnel in winner's address)</p>
 <p>- Unredeemed prizes after sixty (60) days shall be forfeited in favor of the sponsor with prior approval from DTI.</p>
 <br>
-<h5>Terms and Conditions</h5>
+<h3>Terms and Conditions</h3>
 <ul>
 <li>This promo is open for all customers ages 18 years old and above.</li>
 <li>realme smartphones purchased during the said period is only qualified for a valid entry. Validity will be check thru the purchased date specified in uploaded official receipt and screenshot </li>
@@ -30,7 +30,7 @@
 <li>With prior approval from DTI in the event of any disputes, realme Philippines reserves the right of the final decision.</li>
 </ul>
 <br>
-<h5>Control Measures</h5>
+<h3>Control Measures</h3>
 <ul>
 <li>Authorized realme PH management shall verify the possible winners by checking the validity of the entry alongside with the store transaction and their valid governement IDs or Proof of Identity.</li>
 <li>In order to set the entry as valid, only valid receipts will be allowed on the form with a valid 15-digit IMEI1 number.</li>
