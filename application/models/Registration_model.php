@@ -41,6 +41,11 @@ class Registration_model extends CI_Model {
         return ($query-> num_rows() == 0) ? FALSE : $query->result_array();
     }
 
+    function get_stores() {
+        $query = $this->db->select("*")->from("store_names")->get();
+        return ($query-> num_rows() == 0) ? FALSE : $query->result_array();
+    }
+
     function is_registered_email($value) {
         $query = $this->db->select("*")->from("registration")->where("email", $value)->where('is_verified', 1)->get();
         return ($query->num_rows() == 1) ? TRUE : FALSE;

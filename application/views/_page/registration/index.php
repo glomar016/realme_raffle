@@ -56,9 +56,23 @@
 	</div>
 	<div class="form-group">
 		<label for="storeName">Store Name and Branch <span class="text text-danger">*</span></label>
+		<select class="custom-select" id="storeName" name="storeName">
+		    <option value="" <?php echo set_select('storeName', '', TRUE); ?> >- Select Store Name and Branch -</option>
+		    <?php if ($stores) {
+		        foreach ($stores as $s) {
+		            ?>
+		    <option value="<?php echo $s['id']; ?>" <?php echo set_select('storeName', $s['id']); ?> ><?php echo $s['store_name']; ?></option>
+		            <?php
+		        }
+		    } ?>
+		</select>
+		<?php echo form_error('phoneModel', '<span class="text-danger">', '</span>'); ?>
+	</div>
+	<!-- <div class="form-group">
+		<label for="storeName">Store Name and Branch <span class="text text-danger">*</span></label>
 		<input type="text" class="form-control" id="storeName" name="storeName" value="<?php echo set_value('storeName'); ?>">
 		<?php echo form_error('storeName', '<span class="text-danger">', '</span>'); ?>
-	</div>
+	</div> -->
 	<div class="form-group">
 		<label for="storeReceipt">Photo of Official Receipt or E-Commerce Order Details Screenshot <span class="text text-danger">*</span></label>
 		<div class="custom-file">
@@ -99,9 +113,15 @@
 <script src="<?php echo base_url()?>assets/jquery/jquery-3.5.1.min.js"></script>
 <script src="<?php echo base_url()?>assets/jquery/moment.min.js"></script>
 <script src="<?php echo base_url()?>assets/jquery/sweetalert2@11.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+
 <script>
 $(document).ready(function(){
 
+	$('select').selectize({
+		sortField: 'text'
+	});  
 
 	$('#registrationForm').on('submit', function(e){
 		e.preventDefault()
@@ -110,8 +130,7 @@ $(document).ready(function(){
 		let form = $('#registrationForm').serialize();
 		console.log($("#storeReceipt").val())
 
-		
-
+	
 		if($('#firstName').val() == ""){
 			Swal.fire(
 				'Warning!',
@@ -179,6 +198,27 @@ $(document).ready(function(){
 			Swal.fire(
 				'Warning!',
 				'IMEI is required!',
+				'warning'
+			)
+		}
+		else if(!$('#terms').is(":checked")){
+				Swal.fire(
+				'Warning!',
+				'Terms and conditions are required!',
+				'warning'
+			)
+		}
+		else if(!$('#dataPrivacy').is(":checked")){
+				Swal.fire(
+				'Warning!',
+				'Data privacy is required!',
+				'warning'
+			)
+		}
+		else if(!$('#dataAgreement').is(":checked")){
+				Swal.fire(
+				'Warning!',
+				'Data agreement is required!',
 				'warning'
 			)
 		}

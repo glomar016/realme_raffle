@@ -120,6 +120,7 @@ class Registration extends CI_Controller {
 	{
 		$header['style'] = array('registration');
 		$body['devices'] = $this->r->get_devices();
+		$body['stores'] = $this->r->get_stores();
 		$footer['script'] = array('registration');
         $body['current_time'] = $this->r->PH_Date();
 
