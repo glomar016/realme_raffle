@@ -9,6 +9,8 @@
 	<link rel="icon" href="<?php echo base_url('assets/img/realme.jpg'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/pages/css/custom2021.css'); ?>">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/pages/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+
 <?php
 	//Stylesheet for every controller function
 	if (!($style === FALSE)) {

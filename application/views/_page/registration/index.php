@@ -113,15 +113,15 @@
 <script src="<?php echo base_url()?>assets/jquery/jquery-3.5.1.min.js"></script>
 <script src="<?php echo base_url()?>assets/jquery/moment.min.js"></script>
 <script src="<?php echo base_url()?>assets/jquery/sweetalert2@11.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+<!-- <script src="<?php echo base_url()?>assets/pages/js/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script> -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
 $(document).ready(function(){
-
-	$('select').selectize({
-		sortField: 'text'
-	});  
+	$('select').select2({
+	});
+	
 
 	$('#registrationForm').on('submit', function(e){
 		e.preventDefault()
@@ -274,6 +274,7 @@ $(document).ready(function(){
 												data,
 												'warning'
 											)
+											$('#btnsubmit').attr('disabled', false);
 										}
 									}
 								// ajax closing tag

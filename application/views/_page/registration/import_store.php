@@ -30,10 +30,9 @@ $(document).ready(function(){
                         contentType:false,
                     
                         success: function(){
-                            refresh()
                             Swal.fire({
                                 title: 'Success!',
-                                text: 'You successfully add a multiple user.',
+                                text: 'You successfully add a multiple store names data.',
                                 icon: 'success',
                                 confirmButtonText: 'Ok'
                                 })

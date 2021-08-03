@@ -58,12 +58,16 @@ class Import extends CI_Controller {
 				foreach ($cell_collection as $cell) {
 					$column = $objPHPExcel->getActiveSheet()->getCell($cell)->getColumn();
 					$row = $objPHPExcel->getActiveSheet()->getCell($cell)->getRow();
-					$data_value = $objPHPExcel->getActiveSheet()->getCell($cell)->getValue();
+					$data_value = $objPHPExcel->getActiveSheet()->getCell($cell)->getCalculatedValue();
 				 
 					//The header will/should be in row 1 only. of course, this can be modified to suit your need.
 					if ($row == 1) {
 						$header[$row][$column] = $data_value;
-					} else {
+					} 
+					else if($data_value == ""){
+						
+					}
+					else {
 						$arr_data[$row][$column] = $data_value;
 					}
 				}
@@ -83,7 +87,8 @@ class Import extends CI_Controller {
 					'store_name' => $row['E'],
 				);
 				
-				$this->files_model->store($insert_data, "store_names");
+				$insert = $this->files_model->store($insert_data, "store_names");
+				echo json_encode($insert);
 			}
 		
 		}
