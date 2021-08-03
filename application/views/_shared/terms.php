@@ -1,29 +1,22 @@
 <div style="text-align: justify">
-realme Philippines, registered under Runto Technology Inc. can be contacted via mkt@realme.com.ph . For any concerns or questions, kindly contact us via messenger through this link: <a href="https://m.me/realmePhilippines">https://m.me/realmePhilippines</a> .
-<br><br>
-realme Philippines shall only collect, process and store personal information provided by users in accordance with the purpose of this activity and within the limits permitted by applicable laws. Including personal information registered at <a href="https://realmephpromos.com/registration">https://realmephpromos.com/registration</a>.
-<br><br>
-<h5>Mechanics</h5>
-<ul>
-<li>Promo period is from November 17 to December 31, 2020</li>
-<li>Purchasing a realme smartphone from November 17, 2020- December 31, 2020 in any authorized realme stores, partner stores and kiosks nationwide will entitle you to join the promo. Purchases via Official realme PH Lazada store are also qualified.</li>
-<li>For store purchase, secure your official receipt and take a photo of it. For Lazada purchase, save a screenshot of the Order Details showing the package has been delivered.</li>
-<li>Go to <a href="https://realmephpromos.com">realmephpromos</a> and register by accomplishing the form.</li>
-<li>Upload the photo of the Official Receipt into the web form and input the 15-digit IMEI1 Number of the smartphone located at the sticker at the back of the phone.</li>
-<li>Once completed, an email from promos.realmeph@gmail.com will be sent to confirm that your entry is qualified.</li>
-<li>Deadline of submission of entries is on December 31, 2020 at 11:59 PM</li>
-<li>One winner will be drawn via Facebook livestream at the realme Philipines Head Office on January 8, 2021 with the presence of a DTI representative.</li>
-<li>Ten (10) Lucky winners will win an Acer Laptop which will be chosen via third-party winner selector.</li>
-<li>Employees of realme Philippines (Runto Technology Inc.) and its partner agencies including their relatives up to second degree of consaguinity or affinity are disqualified from joining the promotion.</li>
-<li>Winners will be notified via registered mail or contact number.</li>
-<li>Prizes can be redeemed up to sixty (60) days from receipt of registered notification.
-	<ul>
-         <li>GMA Winners (Runto Technology Inc. through authorized personnel in winner's address)</li>
-         <li>Provincial Winners (Delivery of Runto Technology Inc through authorized personnel in winner's address)</li>
-    </ul>
- </li>
-<li>Unredeemed prizes after sixty (60) days shall be forfeited in favor of the sponsor with prior approval from DTI.</li>
-</ul>
+<h1>Realme Fan Festival Raffle Promo</h1>
+<h3>Mechanics</h3>
+<p>- Promo period is from August 8 to August 28, 2021.</p>
+<p>- Purchasing a realme smartphone from August 8 to August 28, 2021 in any authorized realme concept stores, kiosks and partner stores nationwide will entitle you to join the promo. Purchases via Official realme PH Lazada store are also qualified.</p>
+<p>- Upon purchase, secure your official receipt and take a photo of it.</p>
+<p>- Go to (<a href="http://realmephpromos.com/registration">http://realmephpromos.com/registration</a>) and register by accomplishing the form.</p>
+<p>- Upload the photo of the Official Receipt into the web form and input the 15-digit IMEI1 Number of the smartphone located at the sticker at the back of the phone. Input Customer&rsquo;s Name, Address, Email Address, Contact Number, etc.</p>
+<p>- Once completed, an email from realmephpromos@realme.com.ph will be sent to confirm that your entry is qualified.</p>
+<p>- Deadline of submission of entries is on August 28, 2021 at 11:59 PM.</p>
+<p>- Winners will be drawn via Facebook livestream at the realme Philipines Head Office on September 4, 2021 with the presence of a DTI representative.</p>
+<p>- Lucky winners of four (4) realme C11 2021, three (3) realme Buds Q2, and one (1) realme Smart TV 32 inch will be chosen via third-party winner selector.</p>
+<p>- Employees of realme Philippines (Runto Technology Inc.) and its partner agencies including their relatives up to second degree of consaguinity or affinity are disqualified from joining the promotion.</p>
+<p>- Winners will be notified via registered mail or contact number.</p>
+<p>- Prizes can be redeemed up to sixty (60) days from receipt of registered notification.</p>
+<p>- GMA Winners (Runto Technology Inc. through authorized personnel in winner's address)</p>
+<p>- Provincial Winners (Delivery of Runto Technology Inc through authorized personnel in winner's address)</p>
+<p>- Unredeemed prizes after sixty (60) days shall be forfeited in favor of the sponsor with prior approval from DTI.</p>
+<br>
 <h5>Terms and Conditions</h5>
 <ul>
 <li>This promo is open for all customers ages 18 years old and above.</li>
@@ -36,7 +29,7 @@ realme Philippines shall only collect, process and store personal information pr
 <li>realme PH reserves the right to refuse any entries or disqualify any entrants or withhold the presentation of any prize to any entry without advance notice.</li>
 <li>With prior approval from DTI in the event of any disputes, realme Philippines reserves the right of the final decision.</li>
 </ul>
-
+<br>
 <h5>Control Measures</h5>
 <ul>
 <li>Authorized realme PH management shall verify the possible winners by checking the validity of the entry alongside with the store transaction and their valid governement IDs or Proof of Identity.</li>
