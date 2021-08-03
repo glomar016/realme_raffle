@@ -16,6 +16,7 @@ class Files_model extends CI_Model {
    {
         
         $this->db->select("*");
+        $this->db->where('id', '50');
         $this->db->from('registration');
         $query = $this->db->get();
         

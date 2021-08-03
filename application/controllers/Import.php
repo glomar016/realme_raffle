@@ -81,10 +81,7 @@ class Import extends CI_Controller {
 				$userDetails['values'] = $arr_data;
 			}
 
-			echo "<pre>";
-			print_r($data['header']);
-			print_r($userDetails['values']);
-			echo "</pre>";
+			
 
 			foreach($userDetails['values'] as $row){
 				$insert_data = array(

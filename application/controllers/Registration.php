@@ -204,11 +204,57 @@ class Registration extends CI_Controller {
 		        $this->email->set_newline("\r\n");
 		        $this->email->from("realgalo2020@realmephpromos.com", 'realme Registration');
 		        $this->email->to($result['email']);
-		        $this->email->subject('realme Registration 2020');
-		        $this->email->message('
-    		        Hi '.$result['first_name'].',<br><br>
-    		        Thank you for joining our promo! Your verification code is: '.$result['verification_code'].'. Please enter this back in the promo registration website to validate your raffle entry.<br><br>
-    		        realme Philippines');
+		        $this->email->subject('realme Registration 2021');
+
+				$realmelogo = base_url().'assets/img/realme-logo.png';
+				$rafflepromo = base_url().'assets/img/Raffle-Promo-600x155.jpg';
+				$realme02 = base_url().'assets/img/realme-02.png';
+				$this->email->attach($realmelogo);
+				$this->email->attach($rafflepromo);
+				$this->email->attach($realme02);
+				$cidrealmelogo = $this->email->attachment_cid($realmelogo);
+				$cidrafflepromo = $this->email->attachment_cid($rafflepromo);
+				$cidrealme02 = $this->email->attachment_cid($realme02);
+
+
+				$htmlContent = ' 
+                <html> 
+					<head> 
+						<title>Realme Registration 2021</title> 
+					</head> 
+					<body style="background-color: #091548; max-width:700px; margin:auto; padding:100px">  
+					<div style="margin:50px; background-color:#222a5b; border-radius: 25px; padding: 10px;">
+						<div style="text-align: center; margin:0px; padding:25px;">
+						<br><br>
+						<div style="margin-top: -150px">
+							<img src="cid:' .$cidrealmelogo.'"><br>
+						</div>
+							<h2 style="color:white; font-family:arela Round, Trebuchet MS, Helvetica, sans-serif;">Congratulations!</h3> 
+							<h4 style="color:white; font-family:arela Round, Trebuchet MS, Helvetica, sans-serif;" >Hi '.$result['first_name'].',<br><br>
+													Thank you for joining our promo! Your verification code is: '.$result['verification_code'].'. Please enter this back in the promo registration website to validate your raffle entry.<br><br>
+													realme Philippines</h2> 
+							<h1 style="text-align: center; color:yellow; margin:0px;"></h1>
+						</div>
+						<div style="color:white; text-align:center">
+							<br>
+								<img style="width:435px" src="cid:' .$cidrafflepromo.'">
+						</div> <br><br>
+						
+					</div>
+					<div style="color:white; text-align:center">
+							<br>
+								<img style="margin-top: -50px; width:145px" src="cid:' .$cidrealme02.'">
+						</div> 
+					</body> 
+				</html>
+				';
+
+				$this->email->message($htmlContent);
+
+		        // $this->email->message('
+    		    //     Hi '.$result['first_name'].',<br><br>
+    		    //     Thank you for joining our promo! Your verification code is: '.$result['verification_code'].'. Please enter this back in the promo registration website to validate your raffle entry.<br><br>
+    		    //     realme Philippines');
 
 		        $this->email->send();
 		        redirect('registration/verify/'.$id);

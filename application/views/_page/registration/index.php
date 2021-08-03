@@ -106,7 +106,9 @@
 	</div>
 	
 	<hr class="line">
-	<input type="submit" id="btnsubmit" class="btn btn-custom" value="SUBMIT ENTRY">
+	<div class="text-center" >
+		<input type="submit" id="btnsubmit" class="btn btn-lg btn-success btn-custom" value="SUBMIT ENTRY" style="width: 50%">
+	</div>
 </form>
 
 <script src="<?php echo base_url()?>assets/jquery/jquery-3.5.1.js"></script>
@@ -114,7 +116,7 @@
 <script src="<?php echo base_url()?>assets/jquery/moment.min.js"></script>
 <script src="<?php echo base_url()?>assets/jquery/sweetalert2@11.js"></script>
 <!-- <script src="<?php echo base_url()?>assets/pages/js/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script> -->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link href="<?php echo base_url()?>assets/pages/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>

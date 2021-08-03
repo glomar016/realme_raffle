@@ -27,7 +27,6 @@ class Export extends CI_Controller {
 
 	public function index()
 	{
-
         $data['password'] = "r3@lm3";
 
         $this->load->view('_shared/onheader');
