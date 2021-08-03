@@ -28,8 +28,12 @@ class Import extends CI_Controller {
 
 	public function index()
 	{
+
+		$data['password'] = "r3@lm3";
+		
 		$this->load->view('_shared/onheader');
-		$this->load->view('_page/registration/import_store');
+		// $this->load->view('_page/registration/verify_admin');
+		$this->load->view('_page/registration/import_store', $data);
 		$this->load->view('_shared/onfooter');
 	}
 

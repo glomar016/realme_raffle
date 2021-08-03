@@ -27,8 +27,11 @@ class Export extends CI_Controller {
 
 	public function index()
 	{
+
+        $data['password'] = "r3@lm3";
+
         $this->load->view('_shared/onheader');
-		$this->load->view('_page/registration/export_registration');
+		$this->load->view('_page/registration/export_registration', $data);
 		$this->load->view('_shared/onfooter');
 	}
 

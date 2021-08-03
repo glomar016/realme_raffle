@@ -12,6 +12,41 @@
 <script>
 $(document).ready(function(){
 
+    var pagepassword = "<?php echo $password?>";
+
+    if (pagepassword != ""){
+
+        (async () => {
+        const { value: password } = await Swal.fire({
+            title: 'Enter admin password',
+            input: 'password',
+            inputLabel: 'Password',
+            inputPlaceholder: 'Enter your password',
+            inputAttributes: {
+                maxlength: 10,
+                autocapitalize: 'off',
+                autocorrect: 'off'
+            }
+            })
+
+            if (password == pagepassword) {
+                
+            }
+            else{
+                Swal.fire({
+                        title: 'Failed!',
+                        text: 'Incorrect Password.',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                        }).then((result) => {
+                            location.reload();
+                        })
+                        // End of Swal
+
+            }
+        })()
+    }
+
         $('#excelSubmit').on('submit', function(e){
             e.preventDefault()
             
