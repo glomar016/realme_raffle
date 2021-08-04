@@ -2,7 +2,7 @@
 <h1>Realme Fan Festival Raffle Promo</h1>
 <h3>Mechanics</h3>
 <p>- Promo period is from August 8 to August 28, 2021.</p>
-<p>- Purchasing a realme smartphone from August 8 to August 28, 2021 in any authorized realme concept stores, kiosks and partner stores nationwide will entitle you to join the promo. Purchases via Official realme PH Lazada store are also qualified.</p>
+<p>- Purchasing a realme smartphone from August 8 to August 28, 2021 in any authorized realme concept stores, kiosks and partner stores nationwide will entitle you to join the promo. Purchases via Official realme PH Lazada store and Shopee store are also qualified.</p>
 <p>- Upon purchase, secure your official receipt and take a photo of it.</p>
 <p>- Go to (<a href="http://realmephpromos.com/registration">http://realmephpromos.com/registration</a>) and register by accomplishing the form.</p>
 <p>- Upload the photo of the Official Receipt into the web form and input the 15-digit IMEI1 Number of the smartphone located at the sticker at the back of the phone. Input Customer&rsquo;s Name, Address, Email Address, Contact Number, etc.</p>

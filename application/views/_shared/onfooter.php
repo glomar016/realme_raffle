@@ -1,4 +1,4 @@
-		<img draggable="false" class="mechanics" src="<?php echo base_url('assets/img/Mechanics-600x680.jpg'); ?>">
+		<img draggable="false" class="mechanics" src="<?php echo base_url('assets/img/Raffle-Promo-Mechanics.jpg'); ?>">
 		</div>
 		<div class="footer">
 		    
