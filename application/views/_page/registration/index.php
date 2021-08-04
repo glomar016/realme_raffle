@@ -55,7 +55,7 @@
 		<?php echo form_error('purchaseDate', '<span class="text-danger">', '</span>'); ?>
 	</div>
 	<div class="form-group">
-		<label for="storeName">Store Name and Branch <span class="text text-danger">*</span></label>
+		<label for="storeName">Store Name and Branch <br> (if store name is not in the list, select "Others" and specify store name)<span class="text text-danger">*</span></label>
 		<select class="custom-select" id="storeName" name="storeName">
 		    <option value="" <?php echo set_select('storeName', '', TRUE); ?> >- Select Store Name and Branch -</option>
 		    <?php if ($stores) {
@@ -65,8 +65,13 @@
 		            <?php
 		        }
 		    } ?>
+		    <option value="Others">Others</option>
 		</select>
 		<?php echo form_error('phoneModel', '<span class="text-danger">', '</span>'); ?>
+	</div>
+	<div class="form-group" id="otherStoreName" hidden>
+		<label for="otherStoreName">Specify Other Store Name: <span class="text text-danger">*</span></label>
+		<input type="text" class="form-control" id="otherStoreName" name="otherStoreName" value="<?php echo set_value('otherStoreName'); ?>">
 	</div>
 	<!-- <div class="form-group">
 		<label for="storeName">Store Name and Branch <span class="text text-danger">*</span></label>
@@ -122,6 +127,12 @@
 <script>
 $(document).ready(function(){
 	$('select').select2({
+
+	});
+
+	$('#storeName').on('change', function(e){
+		$('#otherStoreName').attr('hidden', false);
+
 	});
 	
 
