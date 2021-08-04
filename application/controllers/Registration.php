@@ -294,12 +294,33 @@ class Registration extends CI_Controller {
 			        $this->email->set_newline("\r\n");
 			        $this->email->from("realgalo2020@realmephpromos.com", 'realme Registration');
 			        $this->email->to($result['email']);
-			        $this->email->subject('realme Registration 2020');
-			        $this->email->message('
-        		        Hi '.$result['first_name'].',<br><br>
-        	            Congratulations! You earned one raffle entry to realme realGalo 2020 with a reference number of '.str_pad($id, 6, '0', STR_PAD_LEFT).'.<br><br>
-        	            Please stay tuned in our Facebook page <a href="https://facebook.com/realmePhilippines">realme Philippines</a> as we will draw the lucky winners on January 8, 2021! We will be sending a text message to the winners so please keep your registered phone number active.<br><br>
-        	            realme Philippines');
+			        $this->email->subject('realme Registration 2021');
+					$htmlContent = ' 
+					<html> 
+						<head> 
+							<title>Realme Registration 2021</title> 
+						</head> 
+						<body style="background-color: #ea273d; max-width:100%; margin:auto; padding:10px">  
+							<div style="margin:50px; background-color:#222a5b; border-radius: 25px;">
+								<div style="text-align: center; margin:0px; padding:25px;">
+									<h1 style="color:white; font-family:arela Round, Trebuchet MS, Helvetica, sans-serif; color:#ffc003">Hi <font color="white"> '.$result['first_name'].'!</font></h1> 
+									<h3 style="color:white; font-family:arela Round, Trebuchet MS, Helvetica, sans-serif; color:#ffc003">Congratulations!<br>
+										You earned one raffle entry to realme realGalo 2021</h3> 
+									<h4 style="color:white; font-family:arela Round, Trebuchet MS, Helvetica, sans-serif; color:#ffc003" >Click this link to view details of it: <br> 
+									'.base_url().'registration/success_details/'.$id.'</h4>
+								</div>
+							</div>
+						</body> 
+					</html>
+					';
+
+			        // $this->email->message('
+        		    //     Hi '.$result['first_name'].',<br><br>
+        	        //     Congratulations! You earned one raffle entry to realme realGalo 2020 with a reference number of '.str_pad($id, 6, '0', STR_PAD_LEFT).'.<br><br>
+        	        //     Please stay tuned in our Facebook page <a href="https://facebook.com/realmePhilippines">realme Philippines</a> as we will draw the lucky winners on January 8, 2021! We will be sending a text message to the winners so please keep your registered phone number active.<br><br>
+        	        //     realme Philippines');
+
+					$this->email->message($htmlContent);
 			        $this->email->send();
 
 			        $client = $this->r->get_info($id);
@@ -318,7 +339,7 @@ class Registration extends CI_Controller {
 			        $this->email->set_newline("\r\n");
 			        $this->email->from("realgalo2020@realmephpromos.com", 'realme Registration');
 			        $this->email->to("realmephpromos@realme.com.ph");
-			        $this->email->subject('realme Registration 2020');
+			        $this->email->subject('realme Registration 2021');
 			        // Name, Address, Contact Info, IMEI, Date of Purchase, Store, Receipt link
 			        $this->email->message('This is to inform you that there is an entry for realme realGALO:<br>
 			        		<p>
@@ -361,7 +382,7 @@ class Registration extends CI_Controller {
 	}
 
 	public function get_code($id = NULL) {
-	$data = array('id' => $id);
+		$data = array('id' => $id);
 			if ($id == NULL) {
 				$header['style'] = array('registration');
 				$footer['script'] = FALSE;
@@ -371,7 +392,7 @@ class Registration extends CI_Controller {
 			}
 			else {
 				$this->r->update_code($id);
-				$result = $this->r->get_registration($id);
+				$result = $this->r->get_success($id);
 				if ($result === FALSE) {
 					$header['style'] = array('registration');
 					$footer['script'] = FALSE;
@@ -381,6 +402,33 @@ class Registration extends CI_Controller {
 				}
 				else {
 					$this->load->view('_shared/email_template', $result);
+					// print_r($result);
+
+			}
+		}
+
+	}
+
+	public function success_details($id = NULL) {
+		$data = array('id' => $id);
+			if ($id == NULL) {
+				$header['style'] = array('registration');
+				$footer['script'] = FALSE;
+				$this->load->view('_shared/onheader', $header);
+				$this->load->view('_page/registration/denied');
+				$this->load->view('_shared/onfooter', $footer);
+			}
+			else {
+				$result = $this->r->get_success($id);
+				if ($result === FALSE) {
+					$header['style'] = array('registration');
+					$footer['script'] = FALSE;
+					$this->load->view('_shared/onheader', $header);
+					$this->load->view('_page/registration/404');
+					$this->load->view('_shared/onfooter', $footer);
+				}
+				else {
+					$this->load->view('_shared/success_email', $result);
 					// print_r($result);
 
 			}

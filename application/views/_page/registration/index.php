@@ -131,8 +131,12 @@ $(document).ready(function(){
 	});
 
 	$('#storeName').on('change', function(e){
-		$('#otherStoreName').attr('hidden', false);
-
+		if($('#storeName').val() == 'Others'){
+			$('#otherStoreName').attr('hidden', false);
+		}
+		else{
+			$('#otherStoreName').attr('hidden', true);
+		}
 	});
 	
 

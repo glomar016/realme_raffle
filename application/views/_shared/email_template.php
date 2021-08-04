@@ -170,14 +170,15 @@
 </tr>
 </tbody>
 </table>
-<div align="center" class="img-container center fixedwidth" style="padding-right: 0px;padding-left: 0px;">
-<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img align="center" alt="Main Image" border="0" class="center fixedwidth" src="<?php echo base_url()?>assets/img/realme-logo.png" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 116px; max-width: 100%; display: block;" title="Main Image" width="116"/>
+
+<div align="center" class="img-container center fixedwidth" style="padding-right: 0px;padding-left: 0px; padding-top: 20px;">
+<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img align="center" alt="Main Image" border="0" class="center fixedwidth" src="<?php echo base_url()?>assets/img/Raffle-Promo-600x155.jpg" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 400px; max-width: 100%; display: block;" title="Main Image" width="400"/>
 <!--[if mso]></td></tr></table><![endif]-->
-</div>
+</div><br>
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top: 10px; padding-bottom: 15px; font-family: sans-serif"><![endif]-->
 <div style="color:#ffffff;font-family:Varela Round, Trebuchet MS, Helvetica, sans-serif;line-height:1.2;padding-top:10px;padding-right:0px;padding-bottom:15px;padding-left:0px;">
 <div class="txtTinyMce-wrapper" style="font-size: 14px; line-height: 1.2; color: #ffffff; font-family: Varela Round, Trebuchet MS, Helvetica, sans-serif; mso-line-height-alt: 17px;">
-<p style="margin: 0; font-size: 30px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 36px; margin-top: 0; margin-bottom: 0;"><span style="font-size: 30px;">Congratulations!</span></p>
+<p style="margin: 0; font-size: 30px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 36px; margin-top: 0; margin-bottom: 0;"><span style="font-size: 30px;">Hi <?php echo $first_name ?>!</span></p>
 </div>
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
@@ -186,7 +187,6 @@
 <div class="txtTinyMce-wrapper" style="font-size: 14px; line-height: 1.5; color: #ffffff; font-family: Varela Round, Trebuchet MS, Helvetica, sans-serif; mso-line-height-alt: 21px;">
 <p style="margin: 0; text-align: center; line-height: 1.5; word-break: break-word; mso-line-height-alt: 21px; margin-top: 0; margin-bottom: 0;"> </p>
 <p style="margin: 0;font-family:Varela Round, Trebuchet MS, Helvetica; text-align: center; line-height: 1.5; word-break: break-word; mso-line-height-alt: 21px; margin-top: 0; margin-bottom: 0;">
-                                                    Hi <?php echo $first_name ?> <br>
                                                     Thank you for joining our promo! <br> Your verification code is: <strong> <font color="yellow"><?php echo $verification_code ?> </font> </strong> <br><br>
                                                     Please enter this back in the promo registration website <br> to validate your raffle entry.<br><br>
                                                     
@@ -195,7 +195,9 @@
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
 <div align="center" class="img-container center fixedwidth" style="padding-right: 0px;padding-left: 0px;">
-<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img align="center" border="0" class="center fixedwidth" src="<?php echo base_url()?>assets/img/Raffle-Promo-600x155.jpg" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 435px; max-width: 100%; display: block;" width="435"/>
+<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]-->
+<img align="center" border="0" class="center fixedwidth"  style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 435px; max-width: 100%; display: block;" width="435"/>
+<br><br><br><br>
 <!--[if mso]></td></tr></table><![endif]-->
 </div>
 <table border="0" cellpadding="0" cellspacing="0" class="divider" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top" width="100%">
@@ -205,7 +207,7 @@
 <table align="center" border="0" cellpadding="0" cellspacing="0" class="divider_content" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 1px solid #5A6BA8; width: 60%;" valign="top" width="60%">
 <tbody>
 <tr style="vertical-align: top;" valign="top">
-<td style="word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top"><span></span></td>
+<!-- <td style="word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top"><span></span></td> -->
 </tr>
 </tbody>
 </table>
@@ -250,7 +252,7 @@
 <!--<![endif]-->
 <div align="center" class="img-container center fixedwidth" style="padding-right: 5px;padding-left: 5px;">
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 5px;padding-left: 5px;" align="center"><![endif]-->
-<div style="font-size:1px;line-height:5px"> </div><img align="center" alt="Your Logo" border="0" class="center fixedwidth" src="<?php echo base_url()?>assets/img/realme-02.png" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 145px; max-width: 100%; display: block;" title="Your Logo" width="145"/>
+<div style="font-size:1px;line-height:5px"> </div><img align="center" alt="Your Logo" border="0" class="center fixedwidth" src="<?php echo base_url()?>assets/img/realme-logo.png" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 145px; max-width: 100%; display: block;" title="Your Logo" width="145"/>
 <div style="font-size:1px;line-height:5px"> </div>
 <!--[if mso]></td></tr></table><![endif]-->
 </div>

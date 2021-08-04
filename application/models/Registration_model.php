@@ -142,6 +142,11 @@ class Registration_model extends CI_Model {
         return ($query->num_rows() == 1) ? $query->row_array() : FALSE;
     }
 
+    public function get_success($id) {
+        $query = $this->db->select('*')->from('registration r')->join('verification_codes v', 'v.registration_id = r.id')->where('r.id', $id)->get();
+        return ($query->num_rows() == 1) ? $query->row_array() : FALSE;
+    }
+
     public function get_code($id) {
         $query = $this->db->select("*")->from("verification_codes")->where("registration_id", $id)->get();
         return ($query->num_rows() == 1) ? $query->row_array() : FALSE;

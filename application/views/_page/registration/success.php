@@ -1,5 +1,5 @@
 <h1 style="color:white">Success!</h1>
-<p style="color:white">You have completed the registration.</p>
+<p style="color:white">You have completed the registration. Check your email for more details</p>
 
 <script src="<?php echo base_url()?>assets/jquery/jquery-3.5.1.js"></script>
 <script src="<?php echo base_url()?>assets/jquery/jquery-3.5.1.min.js"></script>
@@ -12,7 +12,7 @@ $(document).ready(function(){
 
     Swal.fire({
         title: 'Success!',
-        text: 'You have completed the registration.',
+        text: 'You have completed the registration. Check your email for more details',
         icon: 'success',
     })
             // End of Swal
