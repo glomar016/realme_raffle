@@ -61,6 +61,7 @@ class Export extends CI_Controller {
 
         foreach($registration_data as $row)
         {
+            
             $object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->id);
             $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->first_name);
             $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->middle_name);
@@ -81,6 +82,7 @@ class Export extends CI_Controller {
             $object->getActiveSheet()->setCellValueByColumnAndRow(17, $excel_row, $row->is_verified);
         $excel_row++;
         }
+
 
         $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel5');
         header('Content-Type: application/vnd.ms-excel');
